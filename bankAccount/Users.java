@@ -1,71 +1,68 @@
 package bankAccount;
 
+import javafx.scene.transform.Scale;
 
-
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class Users {
+    public String name;
+    public String password;
+    public String dateOfBirth;
+    public String marriageStatus;
+    public String relativeName;
+    public int relativeAge;
+    public boolean isTransferedSuceesfully;
+    public int accountNumber1;
+    public int amountAccount1;
+    public int accountNumber2;
+    public int amountAccount2;
 
+    public Users(String name, String password, String dateOfBirth, String marriageStatus, int amountAccount1, int amountAccount2) {
+        this.name = name;
+        this.password = password;
+        this.dateOfBirth = dateOfBirth;
+        this.marriageStatus = marriageStatus;
+        this.amountAccount1 = amountAccount1;
+        this.amountAccount2 = amountAccount2;
 
+        //this.accountNumber1 =  randomNumberCreader();
+        //this.accountNumber2 = randomNumberCreader();
+        //this.marriageStatus = CheckMariageStatus(); //return
+        //this.dateOfBirth = checkAge(); //return
+    }
 
-    /*
-        Create String variable name password dateOfBirth marriageStatus  relativeName relativeAge isTransferedSuceesfully
-        Create int  accountNumber amountAccount1 accountNumber2 amountAccount2
+    public String CheckMariageStatus(String marriageStatus){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Evli misiniz? E/H");
+        marriageStatus=input.next();
+        if (marriageStatus.equalsIgnoreCase("E")){
+            System.out.print("Akraba eklemek ister misiniz? E/H");
+            String akrabaEklendiMi= input.next();
+            if (akrabaEklendiMi.equalsIgnoreCase("E")){
+                System.out.print("akrabanizin ismi nedir? ");
+                this.relativeName=input.nextLine();
+                Scanner intOku = new Scanner(System.in);
+                System.out.println("akrabanizin dogum tarihi? ");
+                this.relativeAge= intOku.nextInt();
+            }
+            return marriageStatus;
+        } else
+            return "Akraba eklenmeyektir.";
+    }
 
-        all public
-     */
-
-
-    /*
-    --String name ,password, dateOfBirth, marriageStatus,  relativeName, relativeAge, isTransferedSuceesfully  değişkenlerini oluşturun.
-    --int accountNumber, mountAccount1 , accountNumber2 , amountAccount2   değişkenlerini oluşturun.
-    -- hepsi public olsun
-     */
-    //--------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-    //--------------------------------------------------------------------------------------------------
-    /*
-    Create a constructor
-    Parameters are String name , passwod , dateOfBirth , marriageStatus
-    Int amountAccount1 , amountAccount2
-
-    variable name equal to parameter name
-    same for password
-    same for amountAccount1
-    same for amountAccount2
-
-    Following also in the constructor
-
-    variable accountNumber get the the number from the  randomNumberCreader method
-    variable accountNumber2 get the the number from the  randomNumberCreader method
-    variable marriageStatus equal to CheckMariageStatus method return
-    variable dateOfBirth equal to checkAge return
-
-     */
-
-
-    /*
-    --Parametreleri String name , passwod , dateOfBirth , marriageStatus ve
-      Int amountAccount1 , amountAccount2 olan constructor oluşturun
-
-    -- variable name  parameter name e eşittir.
-    -- variable password  parameter password a eşittir.
-    -- variable amountAccount1  parameter amountAccount1 e eşittir.
-    -- variable amountAccount2  parameter amountAccount2 e eşittir.
-
-    --  variable accountNumber   randomNumberCreader methodundan sayı almalı
-    --  variable accountNumber2   randomNumberCreader methodundan sayı almalı
-    -- variable marriageStatus CheckMariageStatus methodunun  return una eşittir
-    -- variable dateOfBirth  checkAge  methodunun return una eşittir
-     */
-    //--------------------------------------------------------------------------------------------------
-
-
-
+    public String checkAge(String myDOB){
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate DOBDate= LocalDate.parse(myDOB,format);
+        Period fark = Period.between(DOBDate,today);
+        if (fark.getYears()>=18)
+            return "You can get a credit card";
+        else
+            return "You should be at least 18 years old to get a credit card.";
+    }
 
 
     //--------------------------------------------------------------------------------------------------
@@ -77,7 +74,7 @@ public class Users {
         if String marriageStatus is married
 
         Ask to user (use scanner class)
-        Do you want to add add your relative?
+        Do you want to add your relative?
 
         if the user say Yes
         Ask to user
@@ -138,28 +135,7 @@ public class Users {
 
 
     //--------------------------------------------------------------------------------------------------
-    /*
-       Create a static method name is checkAge
-       parameter is one String(myDOB)
-       return type is String
 
-       Compare today date to myDOB
-
-       if myDOB compare to today date is 18 then return "You can get a credit card"
-
-       if myDOB compare to today date is less then 18 "You should be at least 18 years old to get a credit card."
-
-       For example today date is 10/05/2020
-
-       if myDOB is 09/05/2002
-
-       return should be  "You can get a credit card"
-
-       if myDOB is 11/05/2002
-
-       return should be  "You should be at least 18 years old to get a credit card."
-
-    */
 
 
     /*
@@ -284,5 +260,57 @@ public class Users {
     //--------------------------------------------------------------------------------------------------
 
 
+
+
+
+
+
+    /*
+        Create String variable name password dateOfBirth marriageStatus  relativeName relativeAge isTransferedSuceesfully
+        Create int  accountNumber amountAccount1 accountNumber2 amountAccount2
+        all public
+     */
+
+    /*
+    --String name ,password, dateOfBirth, marriageStatus,  relativeName, relativeAge, isTransferedSuceesfully  değişkenlerini oluşturun.
+    --int accountNumber, mountAccount1 , accountNumber2 , amountAccount2   değişkenlerini oluşturun.
+    -- hepsi public olsun
+     */
+    //--------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------
+    /*
+    Create a constructor
+    Parameters are String name , passwod , dateOfBirth , marriageStatus
+    Int amountAccount1 , amountAccount2
+
+    variable name equal to parameter name
+    same for password
+    same for amountAccount1
+    same for amountAccount2
+
+    Following also in the constructor
+
+    variable accountNumber get the the number from the  randomNumberCreader method
+    variable accountNumber2 get the the number from the  randomNumberCreader method
+    variable marriageStatus equal to CheckMariageStatus method return
+    variable dateOfBirth equal to checkAge return
+
+     */
+
+    /*
+    --Parametreleri String name , passwod , dateOfBirth , marriageStatus ve
+      Int amountAccount1 , amountAccount2 olan constructor oluşturun
+
+    -- variable name  parameter name e eşittir.
+    -- variable password  parameter password a eşittir.
+    -- variable amountAccount1  parameter amountAccount1 e eşittir.
+    -- variable amountAccount2  parameter amountAccount2 e eşittir.
+
+    --  variable accountNumber   randomNumberCreader methodundan sayı almalı
+    --  variable accountNumber2   randomNumberCreader methodundan sayı almalı
+    -- variable marriageStatus CheckMariageStatus methodunun  return una eşittir
+    -- variable dateOfBirth  checkAge  methodunun return una eşittir
+     */
+    //--------------------------------------------------------------------------------------------------
 
 }

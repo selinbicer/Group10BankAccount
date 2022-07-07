@@ -1,0 +1,22 @@
+    /*
+       Create a static method name is checkAge
+       parameter is one String(myDOB)
+       return type is String
+
+       Compare today date to myDOB
+
+       if myDOB compare to today date is 18 then return "You can get a credit card"
+
+       if myDOB compare to today date is less then 18 "You should be at least 18 years old to get a credit card."
+
+       For example today date is 10/05/2020
+
+       if myDOB is 09/05/2002
+
+       return should be  "You can get a credit card"
+
+       if myDOB is 11/05/2002
+
+       return should be  "You should be at least 18 years old to get a credit card."
+
+    */

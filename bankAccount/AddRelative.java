@@ -1,15 +1,55 @@
 package bankAccount;
 
 public class AddRelative {
+   public String fullName;
+   public String age;
+
+    public AddRelative(String fullName, String age) {
+        this.fullName = fullName;
+        if (relativeAgeChecker(age)==true){
+            this.age=age;
+        }else{
+            this.age="0";
+        }
+    }
+
+    public boolean relativeAgeChecker(String relativeAge){
+        if (Integer.parseInt(relativeAge)>=18)
+            return true;
+        else
+            return false;
+    }
 
     /*
-    Create an instance variable
-        String fullName , age
+        Create a method name is relativeAgeChecker
+        parameter String(relativeAge)
+        return type is boolean
+
+        if the relativeAge more or equal to 18 then return true
+        else false
+
+        Note: use a Users class checkAge method.
+     */
+
+    /*
+       ---Parametresi String relativeAge ve return tipi boolean olan
+          relativeAgeChecker  methodunu oluşturun
+       --- Eğer relativeAge 18 den büyük veya eşit ise true return et
+           aksi halde false return et
+
+       Not :  Users class checkAge methodunu kullan
+
+
      */
     //--------------------------------------------------------------------------------------------------
 
 
 
+            /*
+    Create an instance variable
+        String fullName , age
+     */
+    //--------------------------------------------------------------------------------------------------
 
     //--------------------------------------------------------------------------------------------------
     /*
@@ -35,42 +75,7 @@ public class AddRelative {
      */
     //--------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
     //--------------------------------------------------------------------------------------------------
-
-    /*
-        Create a method name is relativeAgeChecker
-        parameter String(relativeAge)
-        return type is boolean
-
-        if the relativeAge more or equal to 18 then return true
-        else false
-
-        Note: use a Users class checkAge method.
-     */
-
-
-
-    /*
-       ---Parametresi String relativeAge ve return tipi boolean olan
-          relativeAgeChecker  methodunu oluşturun
-       --- Eğer relativeAge 18 den büyük veya eşit ise true return et
-           aksi halde false return et
-
-       Not :  Users class checkAge methodunu kullan
-
-
-     */
-    //--------------------------------------------------------------------------------------------------
-
-
-
-
 
 
 }
