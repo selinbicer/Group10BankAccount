@@ -64,6 +64,11 @@ public class Users {
             return "You should be at least 18 years old to get a credit card.";
     }
 
+    public int randomNumCreader(){
+        int randomNum=(int)((Math.random()*(10000000-1000000)+1000000));
+        return randomNum;
+    }
+
 
     //--------------------------------------------------------------------------------------------------
     /*
