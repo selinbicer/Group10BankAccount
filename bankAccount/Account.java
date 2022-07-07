@@ -2,6 +2,73 @@ package bankAccount;
 
 public class Account {
 
+    public static int deposit(int accountAmount , int amountToAdd){
+        return accountAmount+=amountToAdd;
+    }
+
+    public static int withDraw(int accountAmount , int withdrawAmount){
+        return accountAmount-=withdrawAmount;
+    }
+
+    public static String transferOtherUser(Users sendingUser , Users receivingUser, int transferAmount){
+        if (transferAmount>sendingUser.amountAccount1)
+            return "Sender is poor lol :)";
+        else {
+            sendingUser.amountAccount1-=transferAmount;
+            transferAmount-= transferAmount%2;
+            receivingUser.amountAccount1+=transferAmount;
+            return "Transaction is completed successfully";
+        }
+}
+
+    public static String transferToOwnAccount(Users theUser, int transferAmount){
+        if (transferAmount>theUser.amountAccount1)
+            return "You need more money dude";
+        else {
+            theUser.amountAccount1-=transferAmount;
+            transferAmount-= transferAmount%1;
+            theUser.amountAccount2+=transferAmount;
+            return "Transaction is completed successfully";
+        }
+    }
+
+
+    //--------------------------------------------------------------------------------------------------
+    /*
+       Create a static method name is transferToOwnAccount
+       parameter is One Users object , one int transferAmount
+       return type is String
+
+       if the transferAmount is bigger then Users amountAccount1
+        return You need more money dude
+
+       if the transferAmount is smaller then Users amountAccount1
+          remove the transferAmount from user amountAccount1
+          add transferAmount to user amountAccount2
+
+        return Transaction is completed successfully
+
+     */
+
+
+    /*
+         ---  bir tane One Users object ve bir tane int transferAmount parametresi olan
+             ve return tipi String olan
+            transferToOwnAccount isminde bir static methodu oluşturun.
+        --- Eğer  transferAmount büyükse  Users amountAccount1  den
+            O zaman return     You need more money dude      olmali
+        --- Eğer  transferAmount küçükse  Users amountAccount1   den
+            - transferAmount 1% azalt
+            - user amountAccount1  dan transferAmount  cikar
+            - user amountAccount2 ye transferAmount  ekle
+            - ve, Transaction is completed successfully  return et
+
+     */
+    //--------------------------------------------------------------------------------------------------
+
+
+
+
     /*
         Create a static method name is deposit
         parameters are two int(int accountAmount , int amountToAdd)
@@ -19,9 +86,7 @@ public class Account {
     //------------------------------------------------------------------------------------------------
 
 
-
-
-   //--------------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------------
     /*
          Create a static method name is withDraw
          parameters are two int(int accountAmount , int withdrawAmount)
@@ -36,10 +101,6 @@ public class Account {
         -- accountAmount dan   withdrawAmount  cıkarın.
      */
     //--------------------------------------------------------------------------------------------------
-
-
-
-
 
 
 
@@ -89,46 +150,6 @@ public class Account {
      */
     //--------------------------------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-    //--------------------------------------------------------------------------------------------------
-    /*
-       Create a static method name is transferToOwnAccount
-       parameter is One Users object , one int transferAmount
-       return type is String
-
-       if the transferAmount is bigger then Users amountAccount1
-        return You need more money dude
-
-       if the transferAmount is smaller then Users amountAccount1
-          remove the transferAmount from user amountAccount1
-          add transferAmount to user amountAccount2
-
-        return Transaction is completed successfully
-
-     */
-
-
-    /*
-         ---  bir tane One Users object ve bir tane int transferAmount parametresi olan
-             ve return tipi String olan
-            transferToOwnAccount isminde bir static methodu oluşturun.
-        --- Eğer  transferAmount büyükse  Users amountAccount1  den
-            O zaman return     You need more money dude      olmali
-        --- Eğer  transferAmount küçükse  Users amountAccount1   den
-            - transferAmount 1% azalt
-            - user amountAccount1  dan transferAmount  cikar
-            - user amountAccount2 ye transferAmount  ekle
-            - ve, Transaction is completed successfully  return et
-
-     */
-    //--------------------------------------------------------------------------------------------------
 
 
 
